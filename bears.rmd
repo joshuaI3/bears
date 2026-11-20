@@ -55,11 +55,45 @@ adjusted R-squared is 0.8434
 plot(LENGTH~ HEADWTH,data=bears, pch=17)
 ```
 
+As head circumference increases, length also rises on the chart 
+
+```{r}
+model.3 <- lm(LENGTH~HEADWTH,data=bears)
+summary.lm(model.3)
+```
+Adjusted R-Squared is 0.5321,  making it the smallest number in the ranking.
 
 ## Model LENGTH ~ CHEST
 
+```{r}
+plot(LENGTH~ CHEST,data=bears, pch=17)
+```
 
+As chest of bear gets bigger, so does the length. 
+
+```{r}
+model.4 <- lm(LENGTH~CHEST,data=bears)
+summary.lm(model.4)
+```
+adjusted R-squared is 0.7869
 
 ## Model LENGTH ~ WEIGHT
 
+```{r}
+plot(LENGTH~ WEIGHT,data=bears, pch=17)
+```
+As weight increases in the bear, making the length of the bear long.   
 
+```{r}
+model.5 <- lm(LENGTH~WEIGHT,data=bears)
+summary.lm(model.5)
+```
+Adjusted R-squared is 0.7423. 
+
+##FINAL RANK  
+
+LENGTH~HEADLEN -0.8434     
+LENGTH~CHEST - 0.7869    
+LENGTH~NECK - 0.7476    
+LENGTH~WEIGTH- 0.7423    
+LENGTH~HEADWTH - 0.5321   
