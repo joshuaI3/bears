@@ -1,6 +1,6 @@
 ---
 title: "Bears"
-author: "Your Name Here"
+author: "Joshua Orozco"
 date: "Fall 2026"
 output: html_document
 ---
@@ -20,16 +20,40 @@ bears$MONTH<- as.factor(bears$MONTH)
 
 ## Model LENGTH ~ NECK  this is an example  
 
+```{r}
+plot(LENGTH~NECK,data=bears, pch=17)
+```
+
+As neck circumference increases, length tends to increase.  
 
 Compare all models that predict LENGTH other than NECK.  
 Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
 
+```{r}
+model.1 <- lm(LENGTH~NECK,data=bears)
+summary.lm(model.1)
+```
+The adjusted R squared is 0.7476
+
 ## Model LENGTH ~ HEADLEN
 
+```{r}
+plot(LENGTH~ HEADLEN,data=bears, pch=17)
+```
 
+As the head length increases it gets bigger.  
 
-## Model LENGTH ~ HeadWTH
+```{r}
+model.2 <- lm(LENGTH~HEADLEN,data=bears)
+summary.lm(model.2)
+```
+adjusted R-squared is 0.8434
 
+## Model LENGTH ~ HEADWTH
+
+```{r}
+plot(LENGTH~ HEADWTH,data=bears, pch=17)
+```
 
 
 ## Model LENGTH ~ CHEST
